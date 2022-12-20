@@ -35,7 +35,9 @@ Admin Interface:
 <img width="498" alt="Admin" src="https://user-images.githubusercontent.com/87245699/208658935-70669b8f-58a0-4368-ba89-68b37a603029.png">
 <img width="503" alt="adminUsecase" src="https://user-images.githubusercontent.com/87245699/208659114-e49a8455-3aaa-4093-8ef7-11b25d99dfbb.png">
 
-Step by Step Implementation: 
+
+**Step by Step Implementation: **
+
 Create Normal Project: Open the IDE and create a normal project by selecting File -> New Project.
 Install Django: Next, we will install the Django module from the terminal. We will use PyCharm integrated terminal to do this task. One can also use cmd on windows to install the module by running python -m pip install django command
 Check Installed Django version: To check the installed Django version, you can run the python -m django -version command as shown below.
