@@ -46,6 +46,14 @@ Check Python3 version: python3 –version
 Run Default Django webserver:- Django internally provides a default webserver where we can launch our applications. python manage.py runserver command in terminal. By default, the server runs on port 8000. Access the webserver at the highlighted URL.
 
 
+The below screenshot shows the required models that we will need to create. These models are tables that will be stored in the SQLite database.
+<img width="494" alt="adminti" src="https://user-images.githubusercontent.com/87245699/208671543-65e4341f-a8a8-4bc5-b4c5-c81cc33e7149.png">
+
+
+
+
+
+
 
 
 
