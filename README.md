@@ -49,6 +49,13 @@ Run Default Django webserver:- Django internally provides a default webserver wh
 The below screenshot shows the required models that we will need to create. These models are tables that will be stored in the SQLite database.
 <img width="494" alt="adminti" src="https://user-images.githubusercontent.com/87245699/208671543-65e4341f-a8a8-4bc5-b4c5-c81cc33e7149.png">
 
+Front of app
+<img width="957" alt="fronte" src="https://user-images.githubusercontent.com/87245699/210231613-fbea1dde-8112-4ee4-9928-80a064af9227.png">
+<img width="952" alt="chackout" src="https://user-images.githubusercontent.com/87245699/210231620-fa3b01c6-a0fc-4026-ae05-d1315c48446a.png">
+
+
+
+
 
 
 
