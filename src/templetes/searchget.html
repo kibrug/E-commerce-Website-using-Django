@@ -1,0 +1,60 @@
+{% extends 'base.html' %} {% block title %} Search {% endblock title %} {% block content %} {% load cart %} {% load custom_filter %}
+<!-- body -->
+<div class="container-fluid mt-3">
+    <div class="row">
+
+
+        <!-- filter -->
+
+        <div class="col-lg-3 mx-auto">
+            <div class="list-group">
+
+                <a href="/" class="list-group-item list-group-item-action btn btn-outline-success">All Products</a> {% for category in categories %}
+                <a href="/?category={{category.id}}" class="list-group-item list-group-item-action btn btn-outline-success ">{{category.name}}</a> {% endfor %}
+            </div>
+        </div>
+
+        <!-- all products -->
+        <div id='products' class="col-lg-9 mx-auto">
+            <div class="row mx-auto">
+                <h1> Search Page</h1>
+
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="col-8">
+                        <form action="{% url 'store:searchgets'%}" method="GET">
+                            <h4>Search Here</h4>
+
+                            <input type="text" name='q'>
+                            <input type="submit" class=" btn btn-success  mt-3" value="Search">
+                        </form>
+
+                        <div class="col-8">
+
+                            <div class="col-6">
+
+                                <p>Name:{{searchdata.name}}</p>
+                                <p>Price:{{searchdata.price}}</p>
+                                <p>Id:{{searchdata.id}}</p>
+                                <p>Category Id:{{searchdata.category_id}}</p>
+
+
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

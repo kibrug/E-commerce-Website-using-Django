@@ -17,6 +17,7 @@
         <!-- all products -->
         <div id='products' class="col-lg-9 mx-auto">
             <div class="row mx-auto">
+                <h1> Search Page</h1>
                 {% for product in products %}
                 <div class="card mx-auto mb-3" id={{product.id}} style="width: 18rem;">
                     <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap">
@@ -55,6 +56,22 @@
 
                 </div>
                 {% endfor %}
+
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="col-8">
+                        <form action="{% url 'store:search'%}" method="GET">
+                            <h4>Search Here</h4>
+
+                            <input type="text" name='q'>
+                            <input type="submit" class=" btn btn-success  mt-3" value="Search">
+                        </form>
+
+
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>

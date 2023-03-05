@@ -10,6 +10,7 @@ class Signup (View):
 
     def post(self, request):
         postData = request.POST
+        username = postData.get ('username')
         first_name = postData.get ('firstname')
         last_name = postData.get ('lastname')
         phone = postData.get ('phone')
@@ -17,6 +18,7 @@ class Signup (View):
         password = postData.get ('password')
         # validation
         value = {
+            'username':username,
             'first_name': first_name,
             'last_name': last_name,
             'phone': phone,
@@ -24,7 +26,9 @@ class Signup (View):
         }
         error_message = None
 
-        customer = Customer (first_name=first_name,
+        customer = Customer (
+                             username=username,
+                             first_name=first_name,
                              last_name=last_name,
                              phone=phone,
                              email=email,
@@ -32,7 +36,7 @@ class Signup (View):
         error_message = self.validateCustomer (customer)
 
         if not error_message:
-            print (first_name, last_name, phone, email, password)
+            print ( username,first_name, last_name, phone, email, password)
             customer.password = make_password (customer.password)
             customer.register ()
             return redirect ('homepage')
@@ -45,8 +49,14 @@ class Signup (View):
 
     def validateCustomer(self, customer):
         error_message = None
-        if (not customer.first_name):
-            error_message = "Please Enter your First Name !!"
+        if (not customer.username ):
+            error_message = "Please Enter your UserName !!" 
+        elif len (customer.username) < 3:
+            error_message = 'User Name must be 3 char long or more'
+        #if (not customer.first_name):
+            #error_message = "Please Enter your First Name !!"
+        elif not customer.first_name:
+            error_message = 'Please Enter your First Name'
         elif len (customer.first_name) < 3:
             error_message = 'First Name must be 3 char long or more'
         elif not customer.last_name:

@@ -56,3 +56,30 @@ def store(request):
 
     print('you are : ', request.session.get('email'))
     return render(request, 'index.html', data)
+
+def home_View(request):
+    
+    return render(request,'home.html')
+
+def search_View(request):
+    query_dict = request.GET
+    query = query_dict.get("q")
+    print(query)
+    searchdata = None
+    #nodata = "No Search Results"
+    if query is not None:
+        searchdata = Products.objects.get(name__icontains=query)
+    context ={"searchdata":searchdata}
+        
+    return render(request, 'search.html',context )
+def search_View_Send(request):
+    query_dict = request.GET
+    query = query_dict.get("q")
+    print(query)
+    searchdata = None
+    #nodata = "No Search Results"
+    if query is not None:
+        searchdata = Products.objects.get(name__icontains=query)
+    context ={"searchdata":searchdata}
+        
+    return render(request, 'searchget.html',context )
